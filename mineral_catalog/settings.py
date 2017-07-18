@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'minerals.apps.MineralsConfig',
-    'bootstrap3',
     'debug_toolbar',
     'django_nose',
 ]
