@@ -97,7 +97,4 @@ ENV/
 
 .gitignore
 .idea/
-mineral_catalog/__pycache__/
-templates/
-assets/
-minerals/static/
+

@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}{{ block.super }} : {{ mineral.name }}{% endblock %}
+
+{% block content %}
+ <div class="grid-100 mineral__container">
+      <h1 class="mineral__name">{{ mineral.name|title  }}</h1>
+      <div class="mineral__image-bg">
+        <img class="mineral__image" src="{% static 'minerals/img' %}/{{mineral.image_filename}}" alt="{{mineral.name|title }}">
+        <p class="mineral__caption">{{ mineral.image_caption|title  }}</p>
+      </div>
+      <div class="mineral__table-container">
+        <table class="mineral__table">
+          <tr>
+            <td class="mineral__category">Category</td>
+            <td>{{ mineral.category|title  }}</td>
+          </tr>
+          <tr>
+            <td class="mineral__category">Formula</td>
+            <td class="mineral__formula">{{ mineral.formula|title|safe  }}</td>
+          </tr>
+          <tr>
+            <td class="mineral__category">Strunz Classification</td>
+            <td>{{ mineral.strunz_classification|title  }}</td>
+          </tr>
+          <tr>
+            <td class="mineral__category">Unit Cell</td>
+            <td>{{ mineral.unit_cell|title  }}</td>
+          </tr>
+          <tr>
+            <td class="mineral__category">Color</td>
+            <td>{{ mineral.color|title  }}</td>
+          </tr>
+          <tr>
+            <td class="mineral__category">Crystal Habit</td>
+            <td>{{ mineral.crystal_habit|title  }}</td>
+          </tr>
+          <tr>
+            <td class="mineral__category">Mohs Scale Hardness</td>
+            <td>{{ mineral.mohs_scale_hardness|title }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+{% endblock %}
+{% block random_mineral %}
+<div class="minerals__random">
+    <a class="minerals__anchor" href="{% url 'minerals:detail' pk=random_mineral.pk %}">Show random mineral</a>
+  </div>
+{% endblock %}
