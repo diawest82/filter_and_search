@@ -50,16 +50,15 @@
     </div>
 
     </div>
+  <div class="grid-parent">
     <!-- Filter by group -->
-    <div style="position: fixed; left: 50px; top: 30px;" >
+    <div class="grid-25" >
         <h2 >Categories </h2>
         {% nav_mineral_list %}
     </div>
       {% block content %}{% endblock %}
-
+    </div>
   </div>
-  <div class="minerals__random">
-    <a class="minerals__anchor" href="#">Show random mineral</a>
-  </div>
+  {% block random_mineral %}{% endblock %}
 </body>
 </html>
