@@ -203,6 +203,3 @@ table, p, ul { margin-bottom: 2.5rem; }
 .mineral__category { font-weight: bold; width: 40%; }
 .mineral__formula { font-size: 12px; }
 
-.groups {
-    float: left;
-}

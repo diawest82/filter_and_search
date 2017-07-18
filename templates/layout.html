@@ -17,6 +17,15 @@
 <body>
   <div class="bounds">
     <div class="grid-100">
+    <!-- Search by name -->
+        <nav class="top-bar" role="navigation">
+        <section class="top-bar-right">
+				<form action="{% url 'minerals:search' %}" method="GET">
+						<input type="search" name="q">
+						<button  type="submit" class="secondary small button">Search</button>
+				</form>
+			</section>
+    </nav>
       <a href="{% url 'minerals:list' %}">
         <svg class="logo" viewBox="0 0 127.6 84.8" preserveAspectRation="xMinYMin meet">
           <polygon points="42.7,84.8 49.6,79.4 40,62.5 51.2,43.5 51.2,43.5 25,0 0,55.6 "/>
@@ -26,11 +35,7 @@
         <h1 class="logo__name text-centered">Diallo's Minerals</h1>
       </a>
       <p class="logo__text text-centered">They're not rocks!</p>
-        <!-- Filter by group -->
-    <div class="groups" >
-        <h2 >Categories </h2>
-        {% nav_mineral_list %}
-    </div>
+
     <!--Filter by letter -->
     <div>
         <h2>Search By Letter:</h2>
@@ -43,8 +48,13 @@
         {% endfor %}
         <br><br>
     </div>
-    </div>
 
+    </div>
+    <!-- Filter by group -->
+    <div style="position: fixed; left: 50px; top: 30px;" >
+        <h2 >Categories </h2>
+        {% nav_mineral_list %}
+    </div>
       {% block content %}{% endblock %}
 
   </div>
