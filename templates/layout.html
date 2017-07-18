@@ -26,6 +26,23 @@
         <h1 class="logo__name text-centered">Diallo's Minerals</h1>
       </a>
       <p class="logo__text text-centered">They're not rocks!</p>
+        <!-- Filter by group -->
+    <div class="groups" style="position: fixed; left: 60px; top: 25px;">
+        <h2 >Categories </h2>
+        {% nav_mineral_list %}
+    </div>
+    <!--Filter by letter -->
+    <div>
+        <h2>Search By Letter:</h2>
+        {% for letter in 'abcdefghijklmnopqrstuvwxyz' %}
+            {% if letter  == active_letter %}
+                <a href="{% url 'minerals:letter' letter=letter %}">{{ letter }}</a>
+            {% else %}
+                <a href="{% url 'minerals:letter' letter=letter %}">{{ letter }}</a>
+            {% endif %}
+        {% endfor %}
+        <br><br>
+    </div>
     </div>
 
       {% block content %}{% endblock %}
